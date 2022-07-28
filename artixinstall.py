@@ -74,9 +74,11 @@ if kernel_choice == "3":
 
 os.system("fstabgen -U /mnt >> /mnt/etc/fstab")
 
-os.system("artix-chroot /mnt # formerly artools-chroot")
+os.system("artix-chroot /mnt")
 
 os.system("ln -sf /usr/share/zoneinfo/Region/City /etc/localtime")
+
+os.system("hwclock --systohc")
 
 os.system("pacman -S nano")
 
@@ -89,7 +91,7 @@ print("installing the bootloader")
 time.sleep(1)
 os.system("pacman -S grub os-prober efibootmgr")
 #os.system("grub-install --recheck /dev/sda") for bios systems
-os.system("grub-install --target=x86_86-efi --efi-directory=/boot --bootloader-id=grub")
+os.system("grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub")
 os.system("grub-mkconfig -o /boot/grub/grub.cfg")
 
 print("adding users")
