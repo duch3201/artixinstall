@@ -69,6 +69,7 @@ if kernel_choice == "1":
     os.system("basestrap /mnt linux linux-firmware")
 if kernel_choice == "2":
     os.system("basestrap /mnt linux-zen linux-firmware")
+    print("test")
 if kernel_choice == "3":
     os.system("basestrap /mnt linux-lts linux-firmware")
 
