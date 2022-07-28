@@ -65,12 +65,12 @@ print("1.linux")
 print("2.linux-zen")
 print("3.linux-lts")
 kernel_choice = input(":")
-if kernel_choice == 1:
+if kernel_choice == "1":
     os.system("basestrap /mnt linux linux-firmware")
-if kernel_choice == 2:
-    os.system("basesystem /mnt linux-zen linux-firmware")
-if kernel_choice == 3:
-    os.system("basesystem /mnt linux-lts linux-firmware")
+if kernel_choice == "2":
+    os.system("basestrap /mnt linux-zen linux-firmware")
+if kernel_choice == "3":
+    os.system("basestrap /mnt linux-lts linux-firmware")
 
 os.system("fstabgen -U /mnt >> /mnt/etc/fstab")
 
@@ -126,15 +126,15 @@ os.system("pacman -S xorg")
 print("installing the desktop enviroment")
 print("1. kde 2.mate 3.gnome 4.xfce4 5.lxqt")
 usr_choice_de = input(": ")
-if usr_choice_de == 1:
+if usr_choice_de == "1":
     os.system("pacman -S plasma kde-applications")
-elif usr_choice_de == 2:
+elif usr_choice_de == "2":
     os.system("pacman -S mate mate-extra system-config-printer blueman connman-gtk")
-elif usr_choice_de == 3:
+elif usr_choice_de == "3":
     os.system("pacman -S gnome")
-elif usr_choice_de == 4:
+elif usr_choice_de == "4":
     os.system("pacman -S xfce4 xfce4-goodies")
-elif usr_choice_de == 5:
+elif usr_choice_de == "5":
     os.system("pacman -S lxqt")
 
 print("downloading display manager")
