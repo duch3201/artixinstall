@@ -39,10 +39,10 @@ print("fatlabel " + boot + " Boot")
 print(mkfs_swap + swap)
 
 
-#os.system(mkfs_root + root)
-#os.system(mkfs_boot + boot)
-#os.system("fatlabel " + boot + " BOOT")
-#os.system(mkfs_swap + swap)
+os.system(mkfs_root + root)
+os.system(mkfs_boot + boot)
+os.system("fatlabel " + boot + " BOOT")
+os.system(mkfs_swap + swap)
 
 os.system("swapon /dev/disk/by-label/SWAP")
 os.system("mount /dev/disk/by-label/ROOT /mnt")
