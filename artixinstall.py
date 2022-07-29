@@ -150,7 +150,7 @@ def part2():
 
     print("downloading display manager")
     os.system("pacman -S gdm-openrc")
-    os.system("rc-update add gdm-openrc"
+    os.system("rc-update add gdm-openrc")
 
     print("installing usr packages")
     os.system("pacman -S firefox")
