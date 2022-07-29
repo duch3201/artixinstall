@@ -1,7 +1,10 @@
-def part2():
-    os.system("ln -sf /usr/share/zoneinfo/Region/City /etc/localtime")
+import os
+import time
 
-    os.system("hwclock --systohc")
+def part2():
+    #os.system("ln -sf /usr/share/zoneinfo/Region/City /etc/localtime")
+
+    #os.system("hwclock --systohc")
 
     os.system("pacman -S nano")
 
@@ -29,13 +32,9 @@ def part2():
     hostname = input(": ")
     with open("/etc/hostname", 'w') as hostname_file:
         hostname_file.write(hostname)
-
-    with open("/etc/hosts", 'w') as hosts:
-        data = ""
-        data[3] = "127.0.0.1       localhost"
-        data[4] = "::1             localhost"
-        data[5] = "127.0.1.1       " + usrname + "." + hostname + "  " + hostname
-        hosts.writelines( data )
+        
+    print("please modify /etc/hosts file")
+    os.system("nano /etc/hosts")
 
     print("installing dhcp")
     os.system("pacman -S dhclient")
@@ -64,7 +63,7 @@ def part2():
 
     print("downloading display manager")
     os.system("pacman -S gdm-openrc")
-    os.system("rc-update add gdm-openrc"
+    os.system("rc-update add gdm-openrc")
 
     print("installing usr packages")
     os.system("pacman -S firefox")
