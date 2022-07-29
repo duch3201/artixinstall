@@ -15,6 +15,11 @@ with open("/etc/hostname", 'w') as hostname_file:
 
 os.system("nano etc/hosts")
 
+os.system("pacman -S grub os-prober efibootmgr")
+#os.system("grub-install --recheck /dev/sda") for bios systems
+os.system("grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub")
+os.system("grub-mkconfig -o /boot/grub/grub.cfg")
+
 print("installing dhcp")
 os.system("pacman -S dhclient")
 
