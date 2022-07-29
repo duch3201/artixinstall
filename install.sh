@@ -14,9 +14,9 @@ rootpathcomplete='${rootcmd//[/dev/sda2]/rootcmd}'
 swapcmdpathcomplete='${swappath//[/dev/sda1]/swapcmd}'
 bootpathcomplete='${swappath//[/dev/sda4]/bootcmd}'
 
-echo rootpathcomplete
-echo swapcmdpathcomplete
-echo bootpathcomplete
+echo $rootpathcomplete
+echo $swapcmdpathcomplete
+echo $bootpathcomplete
 
 read -p "Press any key to resume ..."
 
