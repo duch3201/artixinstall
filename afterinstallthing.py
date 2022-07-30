@@ -33,15 +33,14 @@ os.system("pacman -S xorg")
 
 print("installing the desktop enviroment")
 
-os.system("pacman -S gnome")
-
+os.system("pacman -S gnome gnome-extra")
 
 print("downloading display manager")
 os.system("pacman -S gdm-openrc")
 os.system("rc-update add gdm-openrc")
 
 print("installing netorkmanager")
-os.system("pacman -S netwokmanager-openrc")
+os.system("pacman -S netwokmanager netwokmanager-openrc")
 os.system("rc-update NetworkManager add")
 
 print("installing usr packages")
