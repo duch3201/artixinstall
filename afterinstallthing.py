@@ -13,6 +13,8 @@ hostname = input(": ")
 with open("/etc/hostname", 'w') as hostname_file:
   hostname_file.write(hostname)
 
+os.system("pacman -S nano")
+  
 os.system("nano etc/hosts")
 
 os.system("pacman -S grub os-prober efibootmgr")
